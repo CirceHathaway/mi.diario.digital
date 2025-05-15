@@ -1,0 +1,155 @@
+/* Estilo base inspirado en Infobae */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Contenedor principal: layout en dos columnas */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Contenido principal */
+main {
+    flex: 3;
+}
+
+/* Aside lateral a la derecha */
+aside {
+    flex: 1;
+    background-color: #f8f8f8;
+    border-left: 4px solid #f5a623;
+    padding: 15px 20px;
+    font-size: 0.95rem;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 2rem;
+    color: #000;
+    margin: 30px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f5a623;
+}
+
+article {
+    margin-bottom: 40px;
+}
+
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+p {
+    margin: 20px 0;
+    font-size: 1.05rem;
+}
+
+strong {
+    font-weight: bold;
+    color: #0c0c0c;
+}
+
+em {
+    font-style: italic;
+}
+
+a {
+    color: #d78500;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+iframe {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+footer {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+}
+
+footer ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ol li {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer ol li a {
+    color: #000;
+}
+
+footer ol li a:hover {
+    color: #f5a623;
+}
