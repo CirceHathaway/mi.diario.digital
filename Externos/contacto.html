@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+<body>
+    <header id="home">
+        <div>
+            <!--Logo-->
+            <a href="../index.html">
+                <img src="../Imagenes/image.jpg" alt="Logo de la Página" width="30%">
+            </a>
+        </div>
+        <nav>
+        <ul>
+            <li><a href="./politica.html">Volver Atrás</a></li>
+        </ul>
+        <ul><h1>ESTA ES LA SECCIÓN DE CONTACTO</h1></ul>
+    </nav>
+    </header>
+
+    <main>
+        <h2>Comunicate con nosotros</h2>
+        <form action="https://formspree.io/f/mpwdkyyv" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" required placeholder="Ingresar nombre">
+
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido" required placeholder="Ingresar apellido">
+
+            <label for="telefono">Telefono</label>
+            <input type="number" name="telefono" id="telefono" placeholder="Ingresar telefono">
+
+            <label for="">Correo</label>
+            <input type="email" name="correo" id="correo" required placeholder="Ingresar correo">
+
+            <br><br>
+            <label for="tema">Motivo de Contacto</label>
+            <select name="tema" id="tema">
+                <option value="consulta">Consulta</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <br><br>
+            <label for="mensaje">mensaje</label>
+            <textarea name="mensaje" id="mensaje" placeholder="Ingresar mensaje"></textarea>
+
+            <br><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <br><br>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7761814500336!2d-58.395186389345675!3d-34.60982077283936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac2cd859503%3A0x75cdafaaef2b946!2sCongreso%20de%20la%20Naci%C3%B3n%20Argentina!5e0!3m2!1ses!2sar!4v1747028943416!5m2!1ses!2sar"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <Footer> <!--El pie de página-->
+        <ol>
+            <li><a href="#home">Volver a arriba</a></li>
+            <li>Registrate</li>
+            <li>Obtené Beneficios</li>
+        </ol>
+    </Footer>
+
+</body>
+</html>
