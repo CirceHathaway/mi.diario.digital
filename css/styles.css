@@ -152,6 +152,9 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+    width: 100vw;         /* Fuerza a ocupar todo el ancho de la ventana */
+    box-sizing: border-box;  /* Incluye el padding en el ancho total */
+    
 }
 
 footer ol {
@@ -160,10 +163,14 @@ footer ol {
     display: flex;
     justify-content: center;
     gap: 20px;
+    width: 100vw;         /* Fuerza a ocupar todo el ancho de la ventana */
+    box-sizing: border-box;  /* Incluye el padding en el ancho total */
 }
 
 footer ol li {
     margin: 10px 0;
+    width: 100vw;         /* Fuerza a ocupar todo el ancho de la ventana */
+    box-sizing: border-box;  /* Incluye el padding en el ancho total */
 }
 
 /* ===== Responsive (para celulares/tablets) ===== */
