@@ -168,51 +168,26 @@ footer ol li {
     margin: 10px 0;
 }
 
-/* ===== Responsive (para celulares/tablets) ===== */
+
+/* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
 
-    aside {
-        order: 2;
-        margin-top: 20px;
-        border-left: none;
-        border-top: 4px solid #f5a623;
-        position: static;
-        width: 100%;
-    }
+  main, aside {
+    padding: 10px;
+    width: 100%;
+  }
 
-    aside p {
-    background-size: 30px 30px;   /* Reducimos tamaño del ícono */
-    padding-left: 40px;           /* Menos padding para móviles */
-    background-position: 0 5px;   /* Ajustamos posición vertical */
-    font-size: 0.8rem;
-    }
+  footer ol {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    main p {
-        font-size: 1rem;
-    }
-
-    iframe, video {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    header img {
-        width: 80%;
-    }
+  body {
+    font-size: 16px;
+  }
 }
-
