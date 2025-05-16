@@ -153,8 +153,6 @@ footer {
     padding: 20px;
     margin-top: 40px;
     width: 100vw;         /* Fuerza a ocupar todo el ancho de la ventana */
-    box-sizing: border-box;  /* Incluye el padding en el ancho total */
-    
 }
 
 footer ol {
@@ -163,21 +161,18 @@ footer ol {
     display: flex;
     justify-content: center;
     gap: 20px;
-    width: 100vw;         /* Fuerza a ocupar todo el ancho de la ventana */
-    box-sizing: border-box;  /* Incluye el padding en el ancho total */
+    flex-wrap: wrap; /* Para que los ítems no se desborden */
 }
 
 footer ol li {
     margin: 10px 0;
-    width: 100vw;         /* Fuerza a ocupar todo el ancho de la ventana */
-    box-sizing: border-box;  /* Incluye el padding en el ancho total */
 }
 
 /* ===== Responsive (para celulares/tablets) ===== */
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
-        padding: 0 15px;
+        padding: 10px;
     }
 
     aside {
@@ -190,9 +185,10 @@ footer ol li {
     }
 
     aside p {
-    background-size: 40px 40px;   /* Reducimos tamaño del ícono */
-    padding-left: 50px;           /* Menos padding para móviles */
+    background-size: 30px 30px;   /* Reducimos tamaño del ícono */
+    padding-left: 40px;           /* Menos padding para móviles */
     background-position: 0 5px;   /* Ajustamos posición vertical */
+    font-size: 0.8rem;
     }
 
     nav ul {
@@ -209,9 +205,10 @@ footer ol li {
         font-size: 1rem;
     }
 
-    iframe {
-        width: 100% !important;
+    iframe, video {
+        width: 100%;
         height: auto;
+        display: block;
     }
 
     header img {
