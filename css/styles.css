@@ -112,11 +112,37 @@ aside {
     flex: 1;
     background-color: #fffff0;
     border-left: 4px solid #f5a623;
-    padding: 15px 20px;
-    font-size: 0.95rem;
+    padding: 20px 20px;
+    font-size: 0.85rem;
     position: sticky;
     top: 20px;
     height: fit-content;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ===== Íconos personalizados para cada párrafo del aside ===== */
+aside p {
+    background-repeat: no-repeat;
+    background-size: 100px 100px; /* Aumentamos el tamaño */
+    background-position: 0 10px; /* Ajustamos alineación vertical */
+    padding-left: 120px; /* Más espacio para el ícono más grande */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;  /* Línea divisoria */
+    padding-bottom: 15px;  /* Espacio con la línea */
+    text-align: justify;
+}
+
+/* Estilos específicos con imagen de fondo */
+.icon-inflacion {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYKJDDaiNLcKsuZfF31ZaNz-Rx3Pyqndt6aw&s');
+}
+
+.icon-celular {
+    background-image: url('https://www.infobae.com/resizer/v2/AAAO3H2ZJVDCBFB42PFGVQVFMU.jpg?auth=1ccaa6171eecc3de8163ca215828082e2dcb09e1718ca2e40fbd7db743f5959d&smart=true&width=992&height=661&quality=85');
+}
+
+.icon-chile {
+    background-image: url('https://www.infobae.com/resizer/v2/VXQIJN6OBZGMNMQHM643DLMQ2M.jpeg?auth=d6ce6efa5b1edca677116b5461afc8358b5ff936b8d41c61aa97dfefc396fbf0&smart=true&width=992&height=558&quality=85');
 }
 
 /* ===== Footer ===== */
