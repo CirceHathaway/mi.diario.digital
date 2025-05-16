@@ -5,13 +5,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #fffff0;
     color: #222;
 }
 
 /* ===== Encabezado ===== */
 header {
-    background-color: #fff;
+    background-color: #fffff0;
     border-bottom: 2px solid #f5a623;
     padding: 20px;
     text-align: center;
@@ -110,7 +110,7 @@ em {
 /* ===== Aside (contenido lateral a la derecha) ===== */
 aside {
     flex: 1;
-    background-color: #f8f8f8;
+    background-color: #fffff0;
     border-left: 4px solid #f5a623;
     padding: 15px 20px;
     font-size: 0.95rem;
