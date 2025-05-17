@@ -325,45 +325,44 @@ form button:hover {
 
                                             /* Sección Economía */
 /* Estilo para sección de dólar */
+/* CONTENEDOR GENERAL */
 .dolar-info {
     background-color: #fffbe6;
     padding: 20px 10px;
     border-bottom: 2px solid #f5a623;
-    overflow-x: auto;
 }
 
-/* Lista de tarjetas */
+/* LISTA DE TARJETAS */
 #cotizaciones {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-/* Estilo individual de tarjeta */
+/* TARJETAS INDIVIDUALES */
 #cotizaciones li {
     background: white;
-    border-left: 4px solid #f5a623;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #f5a623;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     color: #333;
-    text-align: center;
     min-width: 160px;
+    max-width: 200px;
+    flex: 1 1 180px;
     transition: transform 0.3s ease;
+    text-align: center;
 }
 
+/* ANIMACIÓN AL PASAR EL MOUSE */
 #cotizaciones li:hover {
-    transform: scale(1.05);
-}
-
-.dolar-info li:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
 }
 
 /* --- Media Queries: Móviles y tablets --- */
@@ -440,19 +439,13 @@ form button:hover {
     /* Tarjetas Dolar */
     #cotizaciones {
         flex-wrap: nowrap;
-        animation: scroll-left 30s linear infinite;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
     }
 
     #cotizaciones li {
         flex: 0 0 auto;
-    }
-
-    @keyframes scroll-left {
-        0% {
-            transform: translateX(0%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
+        scroll-snap-align: start;
     }
 }
