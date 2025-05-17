@@ -5,14 +5,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #fffff0;
+    background-color: #FFFFE3;
     color: #222;
     overflow-x: hidden; /*evito desbordamientos horizontales*/ 
 }
 
 /* ===== Encabezado ===== */
 header {
-    background-color: #fffff0;
+    background-color: #FFFFE3;
     border-bottom: 2px solid #f5a623;
     padding: 20px;
     text-align: center;
@@ -130,7 +130,7 @@ em {
 /* ===== Aside (contenido lateral a la derecha) ===== */
 aside {
     flex: 1;
-    background-color: #fffff0;
+    background-color: #FFFFE3;
     border-left: 4px solid #f5a623;
     padding: 20px 20px;
     font-size: 0.85rem;
@@ -189,39 +189,80 @@ footer ol li {
 }
 
 /*Configuración Formulario*/
+.contacto-titulo {
+    font-family: "Monoton", sans-serif;
+    font-size: 2rem;
+    color: #d78500; /* O #000 si preferís negro */
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
 form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #FFFFE3;
+    border: 2px solid #f5a623;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem;
-    font-size: 1.5rem;
+    gap: 1.2rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-input, textarea, button {
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-input, textarea {
-    background-color: #1f1f1f;
-    color: #fff;
-}
-
-button {
-    background-color: #e50914;
-    color: white;
+form label {
     font-weight: bold;
-    cursor: pointer;
-    align-self: center;
-    width: 40%;
-
+    color: #0f0f0f;
 }
 
-button:hover {
-    background-color: #ca0707b6;
+form input, form select, form textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fffef8;
+    color: #222;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #f5a623;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    width: 50%;
+}
+
+form button:hover {
+    background-color: #d48806;
+}
+
+/* Centrar Mapa*/
+.mapa{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.mapa iframe {
+    max-width: 100%;
+    border: 0;
+    border-radius: 10px;
 }
 
 /* --- Media Queries: Móviles y tablets --- */
@@ -283,6 +324,16 @@ button:hover {
         height: auto;
         display: block;
         margin: 1em auto;
+    }
+
+    /*formulario*/
+    form {
+        padding: 1rem;
+        width: 90%;
+    }
+
+    form button {
+        width: 100%;
     }
 
 }
