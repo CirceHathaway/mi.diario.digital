@@ -326,73 +326,39 @@ form button:hover {
                                             /* Sección Economía */
 /* Estilo para sección de dólar */
 .dolar-info {
-    background-color: #FFFFE3;
-    padding: 20px;
+    background-color: #fffbe6;
+    padding: 20px 10px;
     border-bottom: 2px solid #f5a623;
+    overflow-x: auto;
 }
 
-.dolar-info h2 {
-    text-align: center;
-    color: #f5a623;
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.dolar-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.dolar-card {
-    background-color: #FFFFE3;
-    border: 1px solid #eee;
-    border-left: 5px solid #f5a623;
-    padding: 15px 20px;
-    width: 180px;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-}
-
-.dolar-card:hover {
-    transform: translateY(-3px);
-}
-
-.dolar-card strong {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: #222;
-}
-
-.dolar-card span {
-    font-size: 1.3rem;
-    color: #f5a623;
-    font-weight: bold;
-}
-
-.dolar-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Lista de tarjetas */
+#cotizaciones {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.dolar-info li {
-    font-size: 1rem;
+/* Estilo individual de tarjeta */
+#cotizaciones li {
+    background: white;
+    border-left: 4px solid #f5a623;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     color: #333;
-    background: #FFFFE3;
-    padding: 10px 15px;
-    border-left: 5px solid #f5a623; /* Borde amarillo */
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    min-width: 160px;
+    transition: transform 0.3s ease;
+}
+
+#cotizaciones li:hover {
+    transform: scale(1.05);
 }
 
 .dolar-info li:hover {
@@ -472,18 +438,21 @@ form button:hover {
     }
 
     /* Tarjetas Dolar */
-    .dolar-info ul {
+    #cotizaciones {
         flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        gap: 10px;
-  }
+        animation: scroll-left 30s linear infinite;
+    }
 
-  .dolar-info li {
+    #cotizaciones li {
         flex: 0 0 auto;
-        min-width: 160px;
-        font-size: 1rem;
-        text-align: center;
-  }
+    }
 
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
 }
