@@ -113,7 +113,7 @@ em {
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 42.85%; /* Esto es 21:9 */
+  padding-bottom: 56.25%; /* Esto es 16:9 */
   height: 0;
   overflow: hidden;
   margin: 1em auto;
@@ -157,12 +157,60 @@ aside p {
     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYKJDDaiNLcKsuZfF31ZaNz-Rx3Pyqndt6aw&s');
 }
 
+.icon-inflacion a {
+    color: inherit;           /* Toma el color del párrafo */
+    text-decoration: none;    /* Quita el subrayado */
+    display: block;           /* Para que ocupe toda el área del párrafo */
+}
+
+.icon-inflacion a:hover {
+    text-decoration: underline;
+    color: #d48806; 
+}
+
+    /* Celular*/
 .icon-celular {
     background-image: url('https://www.infobae.com/resizer/v2/AAAO3H2ZJVDCBFB42PFGVQVFMU.jpg?auth=1ccaa6171eecc3de8163ca215828082e2dcb09e1718ca2e40fbd7db743f5959d&smart=true&width=992&height=661&quality=85');
 }
 
+.icon-celular a {
+    color: inherit;           
+    text-decoration: none;    
+    display: block;           
+}
+
+.icon-celular a:hover {
+    text-decoration: underline;
+    color: #d48806; 
+}
+
+    /* Chile*/
 .icon-chile {
     background-image: url('https://www.infobae.com/resizer/v2/VXQIJN6OBZGMNMQHM643DLMQ2M.jpeg?auth=d6ce6efa5b1edca677116b5461afc8358b5ff936b8d41c61aa97dfefc396fbf0&smart=true&width=992&height=558&quality=85');
+}
+.icon-chile a {
+    color: inherit;           
+    text-decoration: none;    
+    display: block;           
+}
+
+.icon-chile a:hover {
+    text-decoration: underline;
+    color: #d48806; 
+} 
+    /* Elecciones*/
+.icon-elecciones {
+    background-image: url('../Imagenes/foto.jpeg');
+}
+.icon-elecciones a {
+    color: inherit;           
+    text-decoration: none;    
+    display: block;           
+}
+
+.icon-elecciones a:hover {
+    text-decoration: underline;
+    color: #d48806; 
 }
 
 /* ===== Footer ===== */
@@ -188,6 +236,16 @@ footer ol li {
     margin: 10px 0;
 }
 
+footer a {
+    text-decoration: none;   /* Quita el subrayado */
+    color: white;            /* Color del texto */
+}
+
+footer a:hover {
+    text-decoration: underline;  /* Subrayado al pasar el mouse */
+    color: #f5a623;              /* Cambia el color al pasar el mouse */
+}
+                                    /* Documento Contacto*/
 /*Configuración Formulario*/
 .contacto-titulo {
     font-family: "Monoton", sans-serif;
@@ -265,6 +323,83 @@ form button:hover {
     border-radius: 10px;
 }
 
+                                            /* Sección Economía */
+/* Estilo para sección de dólar */
+.dolar-info {
+    background-color: #FFFFE3;
+    padding: 20px;
+    border-bottom: 2px solid #f5a623;
+}
+
+.dolar-info h2 {
+    text-align: center;
+    color: #f5a623;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.dolar-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dolar-card {
+    background-color: #FFFFE3;
+    border: 1px solid #eee;
+    border-left: 5px solid #f5a623;
+    padding: 15px 20px;
+    width: 180px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.dolar-card:hover {
+    transform: translateY(-3px);
+}
+
+.dolar-card strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.dolar-card span {
+    font-size: 1.3rem;
+    color: #f5a623;
+    font-weight: bold;
+}
+
+.dolar-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.dolar-info li {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    background: #FFFFE3;
+    padding: 10px 15px;
+    border-left: 5px solid #f5a623; /* Borde amarillo */
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dolar-info li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 /* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
     .container {
@@ -335,5 +470,20 @@ form button:hover {
     form button {
         width: 100%;
     }
+
+    /* Tarjetas Dolar */
+    .dolar-info ul {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 10px;
+  }
+
+  .dolar-info li {
+        flex: 0 0 auto;
+        min-width: 160px;
+        font-size: 1rem;
+        text-align: center;
+  }
 
 }
