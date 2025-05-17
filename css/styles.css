@@ -181,7 +181,7 @@ footer ol li {
     }
 
     main, aside {
-    width: 100%;
+        width: 100%;
     }
 
     aside {
@@ -193,10 +193,10 @@ footer ol li {
     }
 
     aside p {
-    background-size: 30px 30px;   /* Reducimos tamaño del ícono */
-    padding-left: 40px;           /* Menos padding para móviles */
-    background-position: 0 5px;   /* Ajustamos posición vertical */
-    font-size: 0.8rem;
+        background-size: 30px 30px;   /* Reducimos tamaño del ícono */
+        padding-left: 40px;           /* Menos padding para móviles */
+        background-position: 0 5px;   /* Ajustamos posición vertical */
+        font-size: 0.8rem;
     }
 
     nav ul {
@@ -213,10 +213,18 @@ footer ol li {
         font-size: 1rem;
     }
 
-    main article img, video, figure {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    main article img, figure {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    video {
+        width: 100%;
+        height: 250px; /* o el alto que prefieras */
+        max-width: 100%;
+        display: block;
+        margin: 1em auto;
     }
 
     iframe {
