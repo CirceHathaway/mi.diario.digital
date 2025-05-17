@@ -213,15 +213,16 @@ footer ol li {
         font-size: 1rem;
     }
 
-    video {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    main article img, iframe, figure {
+    main article img, video, figure {
     max-width: 100%;
     height: auto;
     display: block;
+    }
+
+    iframe {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 1em auto;
     }
 }
