@@ -18,9 +18,7 @@
     <!-- Cotizaciones reemplazando la nav -->
     <section class="dolar-info">
       <h2>Cotización del dólar</h2>
-      <div class="dolar-cards" id="cotizaciones">
-        <!-- Tarjetas se insertan con JS -->
-      </div>
+      <div class="dolar-cards" id="cotizaciones"></div>
     </section>
 
     <h1>"ESTA ES LA SECCIÓN DE ECONOMÍA"</h1>
@@ -36,26 +34,27 @@
   </footer>
 
   <script>
-    fetch("https://dolarapi.com/v1/dolares")
+  fetch("https://dolarapi.com/v1/dolares")
     .then(res => res.json())
     .then(data => {
-      const container = document.getElementById("cotizaciones");
-      container.innerHTML = "";
-      data.forEach(d => {
-        const card = document.createElement("div");
-        card.className = "dolar-card";
-        card.innerHTML = `
-          <strong>${d.nombre}</strong>
-          <span>$${d.venta}</span>
+      const contenedor = document.getElementById("cotizaciones");
+      contenedor.innerHTML = "";
+
+      data.forEach(dolar => {
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "dolar-card";
+        tarjeta.innerHTML = `
+          <strong>${dolar.nombre}</strong>
+          <span>$${dolar.venta}</span>
         `;
-        container.appendChild(card);
+        contenedor.appendChild(tarjeta);
       });
     })
     .catch(err => {
-      document.getElementById("cotizaciones").innerHTML =
-        "<p>Error al cargar cotizaciones</p>";
+      const contenedor = document.getElementById("cotizaciones");
+      contenedor.innerHTML = "<p>Error al cargar cotizaciones</p>";
       console.error(err);
     });
-    </script>
+  </script>
 </body>
 </html>
