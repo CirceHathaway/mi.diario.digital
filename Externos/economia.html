@@ -35,22 +35,22 @@
   </footer>
 
   <script>
-    fetch("https://dolarapi.com/v1/dolares")
-      .then(res => res.json())
-      .then(data => {
-        const ul = document.getElementById("cotizaciones");
-        ul.innerHTML = "";
-        data.forEach(d => {
-          const li = document.createElement("li");
-          li.textContent = `${d.nombre}: $${d.venta}`;
-          ul.appendChild(li);
-        });
-      })
-      .catch(err => {
-        document.getElementById("cotizaciones").innerHTML =
-          "<li>Error al cargar cotizaciones</li>";
-        console.error(err);
-      });
+    const datosPrueba = [
+      { nombre: "Oficial", venta: "905.00" },
+      { nombre: "Tarjeta", venta: "1420.00" },
+      { nombre: "Blue", venta: "1300.00" },
+      { nombre: "MEP", venta: "1230.00" },
+      { nombre: "CCL", venta: "1285.00" },
+      { nombre: "Mayorista", venta: "880.00" }
+    ];
+
+    const ul = document.getElementById("cotizaciones");
+    ul.innerHTML = "";
+    datosPrueba.forEach(d => {
+      const li = document.createElement("li");
+      li.textContent = `${d.nombre}: $${d.venta}`;
+      ul.appendChild(li);
+    });
   </script>
 </body>
 </html>

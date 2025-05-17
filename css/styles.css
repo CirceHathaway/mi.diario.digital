@@ -330,15 +330,15 @@ form button:hover {
     background-color: #fffbe6;
     padding: 20px 10px;
     border-bottom: 2px solid #f5a623;
-    overflow: hidden;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-/* LISTA DE TARJETAS */
+/* CONTENEDOR FLEXIBLE */
 #cotizaciones {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 16px;
+    justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0 auto;
@@ -347,18 +347,17 @@ form button:hover {
 
 /* TARJETA INDIVIDUAL */
 #cotizaciones li {
-    background: white;
+    background-color: white;
     border-left: 5px solid #f5a623;
-    padding: 14px 16px;
+    padding: 15px 18px;
     border-radius: 10px;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     color: #333;
+    min-width: 150px;
     flex: 1 1 160px;
-    max-width: 180px;
-    min-width: 140px;
-    transition: transform 0.3s ease;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 /* ANIMACIÓN AL PASAR EL MOUSE */
@@ -441,9 +440,9 @@ form button:hover {
     #cotizaciones {
         flex-wrap: nowrap;
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        padding: 10px 0;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px 0;
     }
 
     #cotizaciones li {
