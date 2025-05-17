@@ -460,14 +460,14 @@ form button:hover {
     .dolar-cards {
         flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         scroll-snap-type: x mandatory;
     }
 
     .dolar-card {
         scroll-snap-align: start;
-        width: 75%; /* Ocupa gran parte del ancho, pero permite deslizar */
-        margin-right: 10px;
+        width: 25%; /* Ocupa gran parte del ancho, pero permite deslizar */
+        margin-right: 5px;
     }
 
     .dolar-cards::-webkit-scrollbar {
