@@ -51,8 +51,8 @@
       });
     })
     .catch(err => {
-      const contenedor = document.getElementById("cotizaciones");
-      contenedor.innerHTML = "<p>Error al cargar cotizaciones</p>";
+      document.getElementById("cotizaciones").innerHTML =
+        "<p>Error al cargar cotizaciones</p>";
       console.error(err);
     });
   </script>

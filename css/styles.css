@@ -458,19 +458,32 @@ form button:hover {
 
     /* Tarjetas Dolar */
     .dolar-cards {
+        display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 5px;
+        padding-bottom: 10px;
         scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch; /* mejora la experiencia en iOS */
+        gap: 12px;
     }
 
     .dolar-card {
+        flex: 0 0 auto;
         scroll-snap-align: start;
-        width: 25%; /* Ocupa gran parte del ancho, pero permite deslizar */
-        margin-right: 5px;
+        width: 75%; /* puedes ajustar al 80% o 70% según gusto */
+        background-color: white;
+        border: 1px solid #eee;
+        border-left: 5px solid #f5a623;
+        padding: 15px 20px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+    }
+
+    .dolar-card:hover {
+        transform: translateY(-3px);
     }
 
     .dolar-cards::-webkit-scrollbar {
-        display: none; /* Oculta scrollbar en móviles */
+        display: none; /* oculta scrollbar en móviles */
     }
 }
