@@ -7,6 +7,7 @@ body {
     padding: 0;
     background-color: #fffff0;
     color: #222;
+    overflow-x: hidden; /*evito desbordamientos horizontales*/ 
 }
 
 /* ===== Encabezado ===== */
@@ -59,6 +60,8 @@ nav ul li a:hover {
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ===== Main (contenido principal) ===== */
@@ -171,23 +174,54 @@ footer ol li {
 
 /* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-  }
+    .container {
+        flex-direction: column;
+        padding: 10px;
+        max-width: 100%;
+    }
 
-  main, aside {
-    padding: 10px;
+    main, aside {
     width: 100%;
-  }
+    }
 
-  footer ol {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+    aside {
+        order: 2;
+        margin-top: 20px;
+        border-left: none;
+        border-top: 4px solid #f5a623;
+        position: static;
+    }
 
-  body {
-    font-size: 16px;
-  }
+    aside p {
+    background-size: 30px 30px;   /* Reducimos tamaño del ícono */
+    padding-left: 40px;           /* Menos padding para móviles */
+    background-position: 0 5px;   /* Ajustamos posición vertical */
+    font-size: 0.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    iframe, video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    main article img, iframe, figure {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    }
 }
