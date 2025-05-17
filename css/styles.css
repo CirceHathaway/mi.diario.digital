@@ -225,7 +225,7 @@ button:hover {
 }
 
 /* --- Media Queries: Móviles y tablets --- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
     .container {
         flex-direction: column;
         padding: 10px;
@@ -285,43 +285,4 @@ button:hover {
         margin: 1em auto;
     }
 
-    /* Ajustes específicos para modo horizontal en celulares */
-@media screen and (orientation: landscape) and (max-width: 900px) {
-    body {
-        font-size: 1rem;
-    }
-
-    .container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    main, aside {
-        width: 100%;
-    }
-
-    aside {
-        order: 2;
-        border-left: none;
-        border-top: 4px solid #f5a623;
-        margin-top: 20px;
-    }
-
-    .video-wrapper {
-        height: 250px;
-        padding-bottom: 0;
-    }
-
-    iframe {
-        height: 100%;
-    }
-
-    nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-}
 }
