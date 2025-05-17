@@ -328,41 +328,43 @@ form button:hover {
 /* Contenedor principal */
 .dolar-info {
     background-color: #fffbe6;
-    padding: 20px;
+    padding: 20px 10px;
     border-bottom: 2px solid #f5a623;
 }
 
-/* Título */
 .dolar-info h2 {
     text-align: center;
     color: #f5a623;
+    font-size: 1.4rem;
     margin-bottom: 15px;
-    font-size: 1.5rem;
     font-weight: bold;
 }
 
-/* Contenedor de tarjetas horizontal en móviles */
+/* Contenedor de tarjetas horizontal y sin desbordes */
 .dolar-cards {
     display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 15px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    gap: 12px;
     padding-bottom: 10px;
+    margin: 0 -10px;
+    padding-left: 10px;
 }
 
-/* Tarjetas individuales */
+/* Tarjetas móviles */
 .dolar-card {
     background-color: white;
     border: 1px solid #eee;
     border-left: 5px solid #f5a623;
-    padding: 15px 20px;
+    padding: 12px 16px;
     min-width: 160px;
+    max-width: 80%;
     flex-shrink: 0;
     scroll-snap-align: start;
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     transition: transform 0.2s ease;
+    border-radius: 8px;
 }
 
 .dolar-card:hover {
@@ -371,13 +373,13 @@ form button:hover {
 
 .dolar-card strong {
     display: block;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+    font-size: 1rem;
+    margin-bottom: 4px;
     color: #222;
 }
 
 .dolar-card span {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #f5a623;
     font-weight: bold;
 }
@@ -389,7 +391,7 @@ form button:hover {
     */
 
 /* --- Media Queries: Móviles y tablets --- */
-@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
+@media screen and (max-width: 769px), screen and (orientation: landscape) and (max-height: 500px){
     .container {
         flex-direction: column;
         padding: 10px;
@@ -464,9 +466,12 @@ form button:hover {
         flex-wrap: wrap;
         justify-content: center;
         overflow-x: unset;
+        margin: 0;
+        padding: 0;
     }
 
     .dolar-card {
         width: 180px;
+        max-width: none;
     }
 }
