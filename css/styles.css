@@ -10,6 +10,84 @@ body {
     overflow-x: hidden; /*evito desbordamientos horizontales*/ 
 }
 
+/* ===== Navegación ===== */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style-type: none;
+    padding: 1rem 0;
+    border-top: 5px solid #d48806;
+    border-bottom: 5px solid #d48806;
+    background-color: #222;
+    font-family: Arial, sans-serif;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d48806;
+}
+
+/*  =================================== Externos =======================================*/
+/* Solo afecta a main con clase Index-Politica */
+main.Index-Politica h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    border-bottom: 4px solid #f7921e;
+    display: inline-block;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Aside solo dentro del main.Index-Politica */
+/* Aplica solo en la página de Política */
+main.Index-Politica aside {
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+main.Index-Politica aside h1 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f7921e;
+}
+
+main.Index-Politica aside p {
+    display: flex;
+    align-items: flex-start;
+    margin: 1rem 0;
+}
+
+main.Index-Politica aside a {
+    display: flex;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+main.Index-Politica aside a:hover {
+    text-decoration: underline;
+    color: #f7921e;
+}
+
+main.Index-Politica .aside-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+                        /* ============== Base de los documentos ========================*/
 /* ===== Encabezado ===== */
 header {
     background-color: #FFFFE3;
@@ -27,28 +105,6 @@ header h1 {
     font-size: 2rem;
     color: #111;
     margin-top: 10px;
-}
-
-/* ===== Navegación ===== */
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #d48806;
 }
 
 /* ===== Contenedor principal ===== */
@@ -141,76 +197,47 @@ aside {
 }
 
 /* ===== Íconos personalizados para cada párrafo del aside ===== */
+aside {
+    flex: 1;
+    background-color: #FFFFE3;
+    border-left: 4px solid #f5a623;
+    padding: 20px;
+    font-size: 0.85rem;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+aside h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
 aside p {
-    background-repeat: no-repeat;
-    background-size: 100px 100px; /* Aumentamos el tamaño */
-    background-position: 0 10px; /* Ajustamos alineación vertical */
-    padding-left: 120px; /* Más espacio para el ícono más grande */
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;  /* Línea divisoria */
-    padding-bottom: 15px;  /* Espacio con la línea */
-    text-align: justify;
+    margin: 1rem 0;
 }
 
-/* imagen de aside */
-.icon-inflacion {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYKJDDaiNLcKsuZfF31ZaNz-Rx3Pyqndt6aw&s');
+aside a {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: inherit;
 }
 
-.icon-inflacion a {
-    color: inherit;           /* Toma el color del párrafo */
-    text-decoration: none;    /* Quita el subrayado */
-    display: block;           /* Para que ocupe toda el área del párrafo */
-}
-
-.icon-inflacion a:hover {
+aside a:hover {
     text-decoration: underline;
-    color: #d48806; 
+    color: #d48806;
 }
 
-    /* Celular*/
-.icon-celular {
-    background-image: url('https://www.infobae.com/resizer/v2/AAAO3H2ZJVDCBFB42PFGVQVFMU.jpg?auth=1ccaa6171eecc3de8163ca215828082e2dcb09e1718ca2e40fbd7db743f5959d&smart=true&width=992&height=661&quality=85');
-}
-
-.icon-celular a {
-    color: inherit;           
-    text-decoration: none;    
-    display: block;           
-}
-
-.icon-celular a:hover {
-    text-decoration: underline;
-    color: #d48806; 
-}
-
-    /* Chile*/
-.icon-chile {
-    background-image: url('https://www.infobae.com/resizer/v2/VXQIJN6OBZGMNMQHM643DLMQ2M.jpeg?auth=d6ce6efa5b1edca677116b5461afc8358b5ff936b8d41c61aa97dfefc396fbf0&smart=true&width=992&height=558&quality=85');
-}
-.icon-chile a {
-    color: inherit;           
-    text-decoration: none;    
-    display: block;           
-}
-
-.icon-chile a:hover {
-    text-decoration: underline;
-    color: #d48806; 
-} 
-    /* Elecciones*/
-.icon-elecciones {
-    background-image: url('../Imagenes/foto.jpeg');
-}
-.icon-elecciones a {
-    color: inherit;           
-    text-decoration: none;    
-    display: block;           
-}
-
-.icon-elecciones a:hover {
-    text-decoration: underline;
-    color: #d48806; 
+aside img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
 }
 
 /* ===== Footer ===== */
