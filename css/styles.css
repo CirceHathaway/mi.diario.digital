@@ -35,49 +35,15 @@ nav ul li a:hover {
     color: #d48806;
 }
 
-nav ul li {
-    position: relative;
-}
-
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #222;
-    border: 1px solid #d48806;
-    padding: 0;
-    list-style: none;
-    z-index: 1000;
-    min-width: 150px;
-}
-
-nav ul li:hover ul {
-    display: block;
-}
-
-nav ul li ul li a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #fff;
-    white-space: nowrap;
-    font-weight: normal;
-}
-
-nav ul li ul li a:hover {
-    background-color: #444;
-    color: #d48806;
-}
-
-/* ===== BOTÓN HAMBURGUESA ===== */
+/* Ocultamos el botón en pantallas grandes */
 #menu-toggle {
     display: none;
-    font-size: 2rem;
     background: none;
     border: none;
+    font-size: 2rem;
     color: white;
     cursor: pointer;
-    margin: 10px;
+    margin: 0.5rem;
 }
 
 /*  =================================== Externos Politica =======================================*/
@@ -503,33 +469,6 @@ form button:hover {
 
 /* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
-    #menu-toggle {
-        display: block; /* solo en móvil */
-    }
-
-    nav ul {
-        display: none; /* Oculto por defecto */
-        flex-direction: column;
-        gap: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul.open {
-        display: flex; /* Mostrar cuando se hace toggle */
-    }
-
-    nav ul li {
-        width: 100%;
-        border-top: 1px solid #444;
-        border-bottom: 1px solid #444;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 1rem;
-    }
-
     .container {
         flex-direction: column;
         padding: 10px;
@@ -609,5 +548,33 @@ form button:hover {
     .dolar-card {
         width: 90%;  /* Ocupa casi todo el ancho del celular */
         margin-bottom: 15px;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column;
+        background-color: #222;
+        width: 100%;
+        padding: 1rem 0;
+        margin: 0;
+    }
+
+    nav ul.open {
+        display: flex; /* Muestra el menú cuando tiene la clase 'open' */
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem 0;
+        width: 100%;
     }
 }
