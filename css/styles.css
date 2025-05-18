@@ -35,6 +35,17 @@ nav ul li a:hover {
     color: #d48806;
 }
 
+/* ===== BOTÓN HAMBURGUESA ===== */
+#menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+}
+
 /*  =================================== Externos Politica =======================================*/
 /* Solo afecta a main con clase Index-Politica */
 main.Index-Politica h1 {
@@ -458,6 +469,33 @@ form button:hover {
 
 /* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
+    #menu-toggle {
+        display: block; /* solo en móvil */
+    }
+
+    nav ul {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul.open {
+        display: flex; /* Mostrar cuando se hace toggle */
+    }
+
+    nav ul li {
+        width: 100%;
+        border-top: 1px solid #444;
+        border-bottom: 1px solid #444;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem;
+    }
+
     .container {
         flex-direction: column;
         padding: 10px;
