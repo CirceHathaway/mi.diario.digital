@@ -35,7 +35,7 @@ nav ul li a:hover {
     color: #d48806;
 }
 
-/*  =================================== Externos =======================================*/
+/*  =================================== Externos Politica =======================================*/
 /* Solo afecta a main con clase Index-Politica */
 main.Index-Politica h1 {
     font-size: 2rem;
@@ -49,7 +49,6 @@ main.Index-Politica h1 {
 }
 
 /* Aside solo dentro del main.Index-Politica */
-/* Aplica solo en la página de Política */
 main.Index-Politica aside {
     padding: 1rem;
     background-color: #f9f9f9;
@@ -81,6 +80,113 @@ main.Index-Politica aside a:hover {
 }
 
 main.Index-Politica .aside-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+/*  =================================== Externos Economia =======================================*/
+/* Estilo para sección de dólar */
+/* Contenedor principal */
+.dolar-info {
+    background-color: #222;
+    padding: 5px 5px;
+    overflow-x: hidden;
+    border-top: 5px solid #d48806;
+    border-bottom: 5px solid #d48806;
+}
+
+.dolar-info h2 {
+    text-align: center;
+    color: #f5a623;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Contenedor de tarjetas horizontal y sin desbordes */
+.dolar-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Tarjetas móviles */
+.dolar-card {
+    background-color: white;
+    border: 5px solid #f5a623;
+    border-left: 5px solid #f5a623;
+    padding: 0px 20px;
+    width: 180px;
+    flex-shrink: 0;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    border-radius: 3px;
+}
+
+.dolar-card:hover {
+    transform: translateY(-3px);
+}
+
+.dolar-card strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.dolar-card span {
+    font-size: 1.3rem;
+    color: #f5a623;
+    font-weight: bold;
+}
+
+/* Solo afecta a main con clase Index-Economía */
+main.Index-Economia h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    display: inline-block;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Aside solo dentro del main.Index-Economia */
+main.Index-Economia aside {
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+main.Index-Economia aside h1 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f7921e;
+}
+
+main.Index-Economia aside p {
+    display: flex;
+    align-items: flex-start;
+    margin: 1rem 0;
+}
+
+main.Index-Economia aside a {
+    display: flex;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+main.Index-Economia aside a:hover {
+    text-decoration: underline;
+    color: #f7921e;
+}
+
+main.Index-Economia .aside-img {
     width: 60px;
     height: 60px;
     object-fit: cover;
@@ -349,69 +455,6 @@ form button:hover {
     border: 0;
     border-radius: 10px;
 }
-
-                                            /* Sección Economía */
-/* Estilo para sección de dólar */
-/* Contenedor principal */
-.dolar-info {
-    background-color: #fffbe6;
-    padding: 20px 10px;
-    border-bottom: 2px solid #f5a623;
-    overflow-x: hidden;
-}
-
-.dolar-info h2 {
-    text-align: center;
-    color: #f5a623;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-/* Contenedor de tarjetas horizontal y sin desbordes */
-.dolar-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Tarjetas móviles */
-.dolar-card {
-    background-color: white;
-    border: 1px solid #eee;
-    border-left: 5px solid #f5a623;
-    padding: 0px 20px;
-    width: 180px;
-    flex-shrink: 0;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-    border-radius: 3px;
-}
-
-.dolar-card:hover {
-    transform: translateY(-3px);
-}
-
-.dolar-card strong {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: #222;
-}
-
-.dolar-card span {
-    font-size: 1.3rem;
-    color: #f5a623;
-    font-weight: bold;
-}
-
-/* ANIMACIÓN AL PASAR EL MOUSE 
-#cotizaciones li:hover {
-    transform: translateY(-5px);
-} 
-    */
 
 /* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
