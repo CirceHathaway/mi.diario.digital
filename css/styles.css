@@ -11,14 +11,31 @@ body {
 }
 
 /* ===== Navegación ===== */
+nav {
+    position: relative;
+    background-color: #222;
+    border-top: 5px solid #d48806;
+    border-bottom: 5px solid #d48806;
+    padding: 0.5rem 1rem;
+}
+
+/* Ocultamos el botón en pantallas grandes */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
 nav ul {
     display: flex;
     justify-content: center;
     gap: 2rem;
     list-style-type: none;
     padding: 1rem 0;
-    border-top: 5px solid #d48806;
-    border-bottom: 5px solid #d48806;
     background-color: #222;
     font-family: Arial, sans-serif;
 }
@@ -33,17 +50,6 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #d48806;
-}
-
-/* Ocultamos el botón en pantallas grandes */
-#menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    margin: 0.5rem;
 }
 
 /*  =================================== Externos Politica =======================================*/
@@ -488,16 +494,40 @@ form button:hover {
     }
 
     aside p {
-        background-size: 30px 30px;   /* Reducimos tamaño del ícono */
-        padding-left: 40px;           /* Menos padding para móviles */
-        background-position: 0 5px;   /* Ajustamos posición vertical */
+        background-size: 30px 30px;
+        padding-left: 40px;
+        background-position: 0 5px;
         font-size: 0.8rem;
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        background-color: #222;
+        width: 100%;
+        padding: 1rem 0;
+        margin: 0;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    #menu-toggle {
+        display: block;
     }
 
     header h1 {
@@ -516,7 +546,7 @@ form button:hover {
 
     .video-wrapper {
         max-width: 100%;
-        height: auto; 
+        height: auto;
         display: block;
         margin: 1em auto;
     }
@@ -528,7 +558,6 @@ form button:hover {
         margin: 1em auto;
     }
 
-    /*formulario*/
     form {
         padding: 1rem;
         width: 90%;
@@ -538,7 +567,6 @@ form button:hover {
         width: 100%;
     }
 
-    /* Tarjetas Dolar */
     .dolar-cards {
         flex-direction: column;
         align-items: center;
@@ -546,35 +574,7 @@ form button:hover {
     }
 
     .dolar-card {
-        width: 90%;  /* Ocupa casi todo el ancho del celular */
+        width: 90%;
         margin-bottom: 15px;
-    }
-
-    #menu-toggle {
-        display: block;
-    }
-
-    nav ul {
-        display: none; /* Oculta el menú por defecto */
-        flex-direction: column;
-        background-color: #222;
-        width: 100%;
-        padding: 1rem 0;
-        margin: 0;
-    }
-
-    nav ul.open {
-        display: flex; /* Muestra el menú cuando tiene la clase 'open' */
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 1rem 0;
-        width: 100%;
     }
 }
