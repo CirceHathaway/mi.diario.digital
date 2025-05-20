@@ -579,45 +579,51 @@ form button:hover {
      /* Acomoda el navbar general */
     .navbar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         padding: 10px;
     }
 
-    /* Acomoda el contenedor */
     .nav-wrapper {
-        flex-direction: column;
+        display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        position: relative;
     }
 
-    /* Logo centrado y con espacio */
+    .hamburger {
+        font-size: 28px;
+        color: white;
+        margin-right: auto;
+    }
+
     .nav-wrapper h1 {
-        position: static;
-        transform: none;
-        margin: 10px 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        font-size: 1.8rem;
         text-align: center;
     }
 
-    /* Nav izquierdo se acomoda como fila centrada */
-    .nav-left, .nav-right {
+    .nav-left,
+    .nav-right {
         position: static;
-        justify-content: center;
+        display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin: 5px 0;
+        justify-content: center;
+        margin-top: 10px;
     }
 
-    /* Links más accesibles */
-    .nav-left a, .nav-right a {
-        font-size: 16px;
-        padding: 5px;
+    .nav-wrapper .nav-left,
+    .nav-wrapper .nav-right {
+        width: 100%;
     }
 
-    /* Hamburger un poco más chico y arriba */
-    .hamburger {
-        font-size: 24px;
-        align-self: flex-start;
-        margin-bottom: 5px;
+    .nav-left a,
+    .nav-right a {
+        font-size: 14px;
+        padding: 4px 8px;
     }
 
     /* Menú overlay ocupa más espacio en vertical */
