@@ -570,59 +570,108 @@ form button:hover {
 
 /* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
-    .container {
-        flex-direction: column;
-        padding: 10px;
-        max-width: 100%;
-    }
-
-    /* Acomoda el navbar general */
     .navbar {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
+        align-items: stretch;
+        padding: 10px 15px;
+        position: relative;
     }
 
-    /* Acomoda el contenedor */
+    /* Estructura interna centrada y limpia */
     .nav-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+
+    /* Botón hamburguesa a la izquierda */
+    .hamburger {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 28px;
+        z-index: 3;
+        color: white;
+    }
+
+    /* Título centrado y en primer plano */
+    .nav-wrapper h1 {
+        font-size: 24px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        z-index: 2;
+    }
+    .nav-wrapper h1 a {
+        text-decoration: none;
+        color: #f5a623;
+    }
+
+    /* Menú de navegación: dos bloques verticales */
+    .nav-left, .nav-right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .nav-left a, .nav-right a {
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+        padding: 4px 8px;
+    }
+
+    /* Menú overlay (menu desplegable) ocupa toda la pantalla */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.95);
+        z-index: 1000;
+        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 20px;
     }
 
-    /* Logo centrado y con espacio */
-    .nav-wrapper h1 {
-        position: static;
-        transform: none;
-        margin: 10px 0;
+    .overlay-content {
+        color: white;
         text-align: center;
     }
 
-    /* Nav izquierdo se acomoda como fila centrada */
-    .nav-left, .nav-right {
-        position: static;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 5px 0;
+    .overlay-content h1 {
+        font-size: 32px;
+        color: #f5a623;
     }
 
-    /* Links más accesibles */
-    .nav-left a, .nav-right a {
-        font-size: 16px;
-        padding: 5px;
+    .overlay-content h2 {
+        margin-top: 20px;
+        font-size: 20px;
     }
 
-    /* Hamburger un poco más chico y arriba */
-    .hamburger {
-        font-size: 24px;
-        align-self: flex-start;
-        margin-bottom: 5px;
+    .overlay-content ul {
+        list-style: none;
+        padding: 0;
     }
 
-    /* Menú overlay ocupa más espacio en vertical */
-    .overlay {
-        width: 100vw;
+    .overlay-content li {
+        margin: 10px 0;
+    }
+
+    .overlay-content a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+    .redes {
+        margin-top: 20px;
     }
 
     main, aside {
