@@ -583,51 +583,47 @@ form button:hover {
         padding: 10px;
     }
 
-    /* Asegura que el logo esté centrado y el botón hamburguesa alineado a la izquierda */
     .nav-wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        padding: 0;
     }
 
-    /* Botón hamburguesa a la izquierda */
     .hamburger {
         font-size: 28px;
         color: white;
-        margin-left: 10px;
-        z-index: 2;
+        margin-right: auto;
     }
 
-    /* Centra el título "EL DIGITAL" */
     .nav-wrapper h1 {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         margin: 0;
-        font-size: 1.5rem;
-        color: #f5a623;
-        z-index: 1;
-        pointer-events: none; /* evita que tape otros elementos */
+        font-size: 1.8rem;
+        text-align: center;
     }
 
-    /* Acomoda las opciones del menú en una segunda línea centrada */
-    .nav-left, .nav-right {
+    .nav-left,
+    .nav-right {
+        position: static;
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
-        width: 100%;
-        margin-top: 5px;
-        z-index: 0;
+        justify-content: center;
+        margin-top: 10px;
     }
 
-    .nav-left a, .nav-right a {
+    .nav-wrapper .nav-left,
+    .nav-wrapper .nav-right {
+        width: 100%;
+    }
+
+    .nav-left a,
+    .nav-right a {
         font-size: 14px;
         padding: 4px 8px;
-        color: white;
-        text-decoration: none;
     }
 
     /* Menú overlay ocupa más espacio en vertical */
