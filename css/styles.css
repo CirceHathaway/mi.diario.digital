@@ -570,17 +570,13 @@ form button:hover {
 
 /* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
+
 
     .nav-wrapper {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
     }
 
     .nav-left, .nav-right {
@@ -592,21 +588,25 @@ form button:hover {
 
     .nav-left a, .nav-right a {
         font-size: 14px;
-        padding: 6px 10px;
+        padding: 4px 8px;
     }
 
     .nav-wrapper h1 {
         font-size: 24px;
-        margin: 10px 0;
+        margin: 5px 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .hamburger {
-        position: absolute;
-        top: 10px;
-        left: 15px;
-        font-size: 26px;
-        z-index: 10;
-        color: white;
+         position: absolute;
+        top: 12px;
+        left: 12px;
+        font-size: 24px;
+        z-index: 1000;
     }
 
     /* Título centrado y en primer plano */
