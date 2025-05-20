@@ -572,27 +572,40 @@ form button:hover {
 @media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
     .navbar {
         flex-direction: column;
-        align-items: stretch;
-        padding: 10px 15px;
-        position: relative;
+        padding: 10px;
     }
 
-    /* Estructura interna centrada y limpia */
     .nav-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        position: relative;
+        gap: 10px;
     }
 
-    /* Botón hamburguesa a la izquierda */
+    .nav-left, .nav-right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-left a, .nav-right a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .nav-wrapper h1 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
     .hamburger {
         position: absolute;
         top: 10px;
-        left: 10px;
-        font-size: 28px;
-        z-index: 3;
+        left: 15px;
+        font-size: 26px;
+        z-index: 10;
         color: white;
     }
 
