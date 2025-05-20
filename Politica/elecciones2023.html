@@ -4,28 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <title>El Rugido de la Libertad: El Triunfo de Milei en Argentina</title> <!--nombre del documento-->
 </head>
 <body>
-    <header id="home"> <!--cabecera del sitio, puede tener logo y titulo main-->
-        <div>
-            <!--Logo-->
-            <a href="../index.html">
-                <img src="../Imagenes/image.jpg" alt="Logo de la Página" width="30%">
-            </a>
-        </div>
+    <header id="home">
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">☰</div>
+            
+            <div class="nav-wrapper">
+                <div class="nav-left">
+                    <li><a href="#Elecciones">Elecciones</a></li>
+                    <li><a href="#video">Video</a></li>
+                </div>
 
-        <nav> <!--Barra de navegación-->
-            <button id="menu-toggle">☰</button> <!-- ícono hamburguesa -->
-            <ul id="menu"> <!--li*6-->
-                <li><a href="../Externos/economia.html">Economia</a></li>
-                <li><a href="../Externos/politica.html">Política</a></li>
-                <li><a href="#Elecciones">Elecciones</a></li>
-                <li><a href="#video">Video</a></li>
-            </ul>
+                <h1><a href="../index.html">El Digital</a></h1>
+
+                <div class="nav-right">
+                    <a href="../Externos/politica.html">Política</a>
+                    <a href="../Externos/economia.html">Economía</a>
+                </div>
+            </div>
         </nav>
-
     </header>
+
+    <header2>
+        <!-- Menú desplegable -->
+        <nav class="overlay" id="overlay">
+            <div class="overlay-content">
+                <div style="text-align:right;">
+                    <span id="close-overlay" style="cursor:pointer; font-size:24px;">&times;</span>
+                </div>
+                <h1>El Digital</h1>
+                <h2>Secciones</h2>
+                <ul>
+                    <li><a href="../Externos/politica.html">Política</a></li>
+                    <li><a href="../Externos/economia.html">Economía</a></li>
+                    <li><a href="https://www.infobae.com/deportes/" target="_blank">Deportes</a></li>
+                    <li><a href="#">Turismo</a></li>
+                    <li><a href="#">Tendencia</a></li>
+                    <li><a href="https://www.infobae.com/tecno/" target="_blank">Tecnología</a></li>
+                </ul>
+                <div class="redes">
+                    <a href="#">Facebook</a> 
+                    <a href="#">Twitter</a> 
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </nav>
+    </header2>
 
     <div class="container">
         <main><!--contenido principal de la página-->
@@ -180,8 +207,22 @@
     </footer>
 
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            document.getElementById('menu').classList.toggle('open');
+        const hamburger = document.getElementById('hamburger');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            overlay.classList.toggle('open');
+        });
+
+        document.getElementById('close-overlay').addEventListener('click', () => {
+            overlay.classList.remove('open');
+        });
+
+        // Opción: cerrar el overlay si se hace clic fuera o en un enlace
+        overlay.addEventListener('click', (e) => {
+                if (e.target === overlay || e.target.tagName === 'A') {
+                    overlay.classList.remove('open');
+                }
         });
     </script>
     

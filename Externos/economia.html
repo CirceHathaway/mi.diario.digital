@@ -5,34 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Economía</title>
   <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header id="home">
-    <div>
-      <!--Logo-->
-      <a href="../index.html">
-        <img src="../Imagenes/image.jpg" alt="Logo de la Página" width="30%" />
-      </a>
-    </div>
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">☰</div>
+            
+            <div class="nav-wrapper">
+                <div class="nav-left">
+                    <a href="../Externos/politica.html">Política</a>
+                    <a href="../Externos/economia.html">Economía</a>
+                </div>
 
-    <nav> <!--Barra de navegación-->
-            <button id="menu-toggle">☰</button> <!-- ícono hamburguesa -->
-            <ul id="menu"> <!--li*6-->
-                <li><a href="../index.html">Página Principal</a></li>
-                <li><a href="./politica.html">Política</a></li>
-                <li><a href="./economia.html">Economía</a></li>
-                <li><a href="#">Deportes</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
+                <h1><a href="../index.html">El Digital</a></h1>
+
+                <div class="nav-right">
+                    <a href="https://www.infobae.com/deportes/" target="_blank">Deportes</a>
+                    <a href="https://www.infobae.com/tecno/" target="_blank">Tecnología</a>
+                </div>
+            </div>
         </nav>
+    </header>
 
-    <!-- Cotizaciones reemplazando la nav -->
-    <section class="dolar-info">
-      <h2>Cotización del dólar</h2>
-      <div class="dolar-cards" id="cotizaciones"></div>
-    </section>
-
-  </header>
+    <header2>
+        <!-- Menú desplegable -->
+        <nav class="overlay" id="overlay">
+            <div class="overlay-content">
+                <div style="text-align:right;">
+                    <span id="close-overlay" style="cursor:pointer; font-size:24px;">&times;</span>
+                </div>
+                <h1>El Digital</h1>
+                <h2>Secciones</h2>
+                <ul>
+                    <li><a href="./politica.html">Política</a></li>
+                    <li><a href="./economia.html">Economía</a></li>
+                    <li><a href="https://www.infobae.com/deportes/" target="_blank">Deportes</a></li>
+                    <li><a href="#">Turismo</a></li>
+                    <li><a href="#">Tendencia</a></li>
+                    <li><a href="https://www.infobae.com/tecno/" target="_blank">Tecnología</a></li>
+                </ul>
+                <div class="redes">
+                    <a href="#">Facebook</a> 
+                    <a href="#">Twitter</a> 
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </nav>
+    </header2>
 
   <div class="container">
       <main class="Index-Economia"><!--contenido principal de la página-->
@@ -70,7 +90,7 @@
   <footer>
     <ol>
       <li><a href="#home">Volver a arriba</a></li>
-      <li><a href="./contacto.html">Contactanos</a></li>
+      <li><a href="../Externos/contacto.html">Contactanos</a></li>
       <li><a href="#">Obtené Beneficios</a></li>
     </ol>
     <p>© 2025 Mi Diario Digital</p>
@@ -101,10 +121,24 @@
   </script>
 
   <script>
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            document.getElementById('menu').classList.toggle('open');
+        const hamburger = document.getElementById('hamburger');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            overlay.classList.toggle('open');
         });
-  </script>
+
+        document.getElementById('close-overlay').addEventListener('click', () => {
+            overlay.classList.remove('open');
+        });
+
+        // Opción: cerrar el overlay si se hace clic fuera o en un enlace
+        overlay.addEventListener('click', (e) => {
+                if (e.target === overlay || e.target.tagName === 'A') {
+                    overlay.classList.remove('open');
+                }
+        });
+    </script>
 
 </body>
 </html>

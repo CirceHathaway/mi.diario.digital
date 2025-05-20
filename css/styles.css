@@ -2,53 +2,147 @@
 /* ===== Reset y base ===== */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.1;
     margin: 0;
-    padding: 0;
     background-color: #FFFFE3;
     color: #222;
     overflow-x: hidden; /*evito desbordamientos horizontales*/ 
 }
 
-/* ===== Navegación ===== */
-nav {
-    position: relative;
+/* ===== Navegador ===== */
+.navbar {
     background-color: #222;
     border-top: 5px solid #d48806;
     border-bottom: 5px solid #d48806;
-    padding: 0.5rem 1rem;
+    padding: 10px 20px;
 }
 
-/* Ocultamos el botón en pantallas grandes */
-#menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    margin: 0.5rem;
-}
-
-nav ul {
+/* Flexbox para alinear hamburger y contenido */
+.navbar {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style-type: none;
-    padding: 1rem 0;
-    background-color: #222;
-    font-family: Arial, sans-serif;
+    align-items: center;
 }
 
-nav ul li a {
+/* Este contenedor agrupa izquierda, centro (h1) y derecha */
+.nav-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* h1 perfectamente centrado */
+.nav-wrapper h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 2rem;
+    font-family: "Monoton", sans-serif;
+}
+
+/* Navs alineados a los extremos */
+.nav-left {
+    position: absolute;
+    left: 10rem;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-right {
+    position: absolute;
+    right: 10rem;
+    display: flex;
+    gap: 15px;
+}
+
+/* Links */
+.nav-left a, .nav-right a, h1 a {
     text-decoration: none;
     font-weight: bold;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
+    color: white;
 }
 
-nav ul li a:hover {
+.nav-left a:hover, .nav-right a:hover {
+    color: #d48806;
+}
+
+.hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: #222;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding: 40px 20px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+}
+
+.overlay.open {
+    transform: translateX(0);
+}
+
+.overlay-content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.overlay-content h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.overlay-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.overlay-content ul li {
+    margin: 10px 0;
+}
+
+.overlay-content ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+.overlay span {
+    color: #ffffff;
+}
+
+.redes {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.redes a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 5px;
+}
+
+header h1 a , .overlay h1, .overlay h2{ /* Letra del logo*/
+    color: #d48806;
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.overlay a:hover {
     color: #d48806;
 }
 
@@ -113,6 +207,7 @@ main.Index-Politica .aside-img {
     overflow-x: hidden;
     border-top: 5px solid #d48806;
     border-bottom: 5px solid #d48806;
+    margin-top: 0.5rem;
 }
 
 .dolar-info h2 {
@@ -136,7 +231,7 @@ main.Index-Politica .aside-img {
     background-color: white;
     border: 5px solid #f5a623;
     border-left: 5px solid #f5a623;
-    padding: 0px 20px;
+    padding: 0px 5px;
     width: 180px;
     flex-shrink: 0;
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
@@ -237,8 +332,8 @@ header h1 {
     align-items: flex-start;
     gap: 30px;
     max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
+    margin: 20px auto;
+    padding: 10 20px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -481,6 +576,55 @@ form button:hover {
         max-width: 100%;
     }
 
+     /* Acomoda el navbar general */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    /* Acomoda el contenedor */
+    .nav-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Logo centrado y con espacio */
+    .nav-wrapper h1 {
+        position: static;
+        transform: none;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Nav izquierdo se acomoda como fila centrada */
+    .nav-left, .nav-right {
+        position: static;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 5px 0;
+    }
+
+    /* Links más accesibles */
+    .nav-left a, .nav-right a {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    /* Hamburger un poco más chico y arriba */
+    .hamburger {
+        font-size: 24px;
+        align-self: flex-start;
+        margin-bottom: 5px;
+    }
+
+    /* Menú overlay ocupa más espacio en vertical */
+    .overlay {
+        width: 100vw;
+    }
+
     main, aside {
         width: 100%;
     }
@@ -498,36 +642,6 @@ form button:hover {
         padding-left: 40px;
         background-position: 0 5px;
         font-size: 0.8rem;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        background-color: #222;
-        width: 100%;
-        padding: 1rem 0;
-        margin: 0;
-    }
-
-    nav ul.open {
-        display: flex;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 1rem 0;
-        width: 100%;
-    }
-
-    #menu-toggle {
-        display: block;
     }
 
     header h1 {

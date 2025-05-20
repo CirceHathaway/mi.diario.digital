@@ -6,18 +6,54 @@
     <title>Contacto</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="home">
-        <div>
-            <!--Logo-->
-            <a href="../index.html">
-                <img src="../Imagenes/image.jpg" alt="Logo de la Página" width="30%">
-            </a>
-        </div>
-        <nav>
-    </nav>
+        <nav class="navbar">
+            <div class="hamburger" id="hamburger">☰</div>
+            
+            <div class="nav-wrapper">
+                <div class="nav-left">
+                    <a href="#mapa">Mapa</a>
+                    <a href="./economia.html">Economía</a>
+                </div>
+
+                <h1><a href="../index.html">El Digital</a></h1>
+
+                <div class="nav-right">
+                    <a href="https://www.infobae.com/deportes/" target="_blank">Deportes</a>
+                    <a href="https://www.infobae.com/tecno/" target="_blank">Tecnología</a>
+                </div>
+            </div>
+        </nav>
     </header>
+
+    <header2>
+        <!-- Menú desplegable -->
+        <nav class="overlay" id="overlay">
+            <div class="overlay-content">
+                <div style="text-align:right;">
+                    <span id="close-overlay" style="cursor:pointer; font-size:24px;">&times;</span>
+                </div>
+                <h1>El Digital</h1>
+                <h2>Secciones</h2>
+                <ul>
+                    <li><a href="./politica.html">Política</a></li>
+                    <li><a href="./economia.html">Economía</a></li>
+                    <li><a href="https://www.infobae.com/deportes/" target="_blank">Deportes</a></li>
+                    <li><a href="#">Turismo</a></li>
+                    <li><a href="#">Tendencia</a></li>
+                    <li><a href="https://www.infobae.com/tecno/" target="_blank">Tecnología</a></li>
+                </ul>
+                <div class="redes">
+                    <a href="#">Facebook</a> 
+                    <a href="#">Twitter</a> 
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </nav>
+    </header2>
 
     <main>
         <article>
@@ -54,7 +90,7 @@
     </main>
 
     <br><br>
-    <div class="mapa">
+    <div class="mapa" id="mapa">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7761814500336!2d-58.395186389345675!3d-34.60982077283936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac2cd859503%3A0x75cdafaaef2b946!2sCongreso%20de%20la%20Naci%C3%B3n%20Argentina!5e0!3m2!1ses!2sar!4v1747028943416!5m2!1ses!2sar"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -68,6 +104,26 @@
             <li><a href="#">Obtené Beneficios</a></li>
         </ol>
     </Footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            overlay.classList.toggle('open');
+        });
+
+        document.getElementById('close-overlay').addEventListener('click', () => {
+            overlay.classList.remove('open');
+        });
+
+        // Opción: cerrar el overlay si se hace clic fuera o en un enlace
+        overlay.addEventListener('click', (e) => {
+                if (e.target === overlay || e.target.tagName === 'A') {
+                    overlay.classList.remove('open');
+                }
+        });
+    </script>
 
 </body>
 </html>
