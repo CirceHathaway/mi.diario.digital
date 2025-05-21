@@ -586,6 +586,7 @@ form button:hover {
         justify-content: center;
         flex-wrap: wrap;
         grid-column: 1/4;
+        font-size: 24px; /*Achico al h1*/
         margin-top: -55px; /*muevo el h1 para arriba*/
     }
     .hamburger {
