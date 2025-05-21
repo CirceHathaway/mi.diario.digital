@@ -635,6 +635,27 @@ form button:hover {
         position: static;
     }
 
+    aside p {
+        background-size: 30px 30px;
+        padding-left: 40px;
+        background-position: 0 5px;
+        font-size: 0.8rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    main article img, figure {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
     .video-wrapper,
     main article img,
     figure,
