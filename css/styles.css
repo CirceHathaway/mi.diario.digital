@@ -622,6 +622,12 @@ form button:hover {
         width: 100vw;
     }
 
+    .container {
+        flex-direction: column;  /* 🔁 Apila main y aside uno debajo del otro */
+        padding: 10px;
+        max-width: 100%;
+    }
+
     /* Otros ajustes del layout general */
     main, aside {
         width: 100%;
@@ -637,7 +643,6 @@ form button:hover {
 
     aside p {
         background-size: 30px 30px;
-        padding-left: 40px;
         background-position: 0 5px;
         font-size: 0.8rem;
     }
