@@ -11,36 +11,50 @@ body {
 
 /* ===== Navegador ===== */
 .navbar {
-    background-color: black;
-    color: white;
+    background-color: #222;
+    border-top: 5px solid #d48806;
+    border-bottom: 5px solid #d48806;
+    padding: 10px 20px;
 }
 
+/* Flexbox para alinear hamburger y contenido */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+/* Este contenedor agrupa izquierda, centro (h1) y derecha */
 .nav-wrapper {
     display: flex;
-    justify-content: space-between;
+    flex: 1;
+    justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    padding: 10px;
+    position: relative;
 }
 
-.nav-left,
-.nav-right {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-left a,
-.nav-right a,
-.nav-wrapper h1 a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Logo centrado */
+/* h1 perfectamente centrado */
 .nav-wrapper h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0;
-    font-size: 24px;
+    font-size: 2rem;
+    font-family: "Monoton", sans-serif;
+}
+
+/* Navs alineados a los extremos */
+.nav-left {
+    position: absolute;
+    left: 10rem;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-right {
+    position: absolute;
+    right: 10rem;
+    display: flex;
+    gap: 15px;
 }
 
 /* Links */
