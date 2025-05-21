@@ -43,14 +43,18 @@ body {
 }
 
 /* Navs alineados a los extremos */
-.nav-left, .nav-right {
-    position: static !important; /* 💥 Esto quita el position absolute heredado */
+.nav-left {
+    position: absolute;
+    left: 10rem;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    grid-column: 1 / 4;
-    margin-top: 10px;
-    gap: 10px;
+    gap: 15px;
+}
+
+.nav-right {
+    position: absolute;
+    right: 10rem;
+    display: flex;
+    gap: 15px;
 }
 
 /* Links */
@@ -601,6 +605,7 @@ form button:hover {
     }
 
     .nav-left, .nav-right {
+        position: static !important; /* 💥 Esto quita el position absolute heredado */
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
