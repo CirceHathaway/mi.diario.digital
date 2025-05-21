@@ -43,18 +43,14 @@ body {
 }
 
 /* Navs alineados a los extremos */
-.nav-left {
-    position: absolute;
-    left: 10rem;
+.nav-left, .nav-right {
+    position: static !important; /* 💥 Esto quita el position absolute heredado */
     display: flex;
-    gap: 15px;
-}
-
-.nav-right {
-    position: absolute;
-    right: 10rem;
-    display: flex;
-    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-column: 1 / 4;
+    margin-top: 10px;
+    gap: 10px;
 }
 
 /* Links */
