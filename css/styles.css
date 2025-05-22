@@ -154,6 +154,8 @@ header h1 a , .overlay h1, .overlay h2{ /* Letra del logo*/
 
 #articulos h2 {
     margin: 0px;
+    font-family: "Monoton", sans-serif;
+    color: #d48806;
 }
 
 .articulos-container {
@@ -549,7 +551,7 @@ footer a:hover {
     text-decoration: underline;  /* Subrayado al pasar el mouse */
     color: #f5a623;              /* Cambia el color al pasar el mouse */
 }
-                                    /* Documento Contacto*/
+/*============================================= Documento Contacto ========================================*/
 /*Configuración Formulario*/
 .contacto-titulo {
     font-family: "Monoton", sans-serif;
@@ -565,7 +567,7 @@ form {
     max-width: 600px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: #FFFFE3;
+    background-color: #2a2929;
     border: 2px solid #f5a623;
     border-radius: 10px;
     display: flex;
@@ -576,7 +578,7 @@ form {
 
 form label {
     font-weight: bold;
-    color: #0f0f0f;
+    color: #ffffff;
 }
 
 form input, form select, form textarea {
