@@ -152,6 +152,10 @@ header h1 a , .overlay h1, .overlay h2{ /* Letra del logo*/
     padding: 40px 20px;
 }
 
+#articulos h2 {
+    margin: 0px;
+}
+
 .articulos-container {
     display: flex;
     flex-wrap: wrap;
