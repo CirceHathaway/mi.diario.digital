@@ -9,7 +9,7 @@ body {
     overflow-x: hidden; /*evito desbordamientos horizontales*/ 
 }
 
-/* ===== Navegador ===== */
+/* ========================================= Navegador =================================== */
 .navbar {
     background-color: #222;
     border-top: 5px solid #d48806;
@@ -144,6 +144,61 @@ header h1 a , .overlay h1, .overlay h2{ /* Letra del logo*/
 
 .overlay a:hover {
     color: #d48806;
+}
+
+/*  =================================== Index =======================================*/
+/* Estilo para la sección de articulos */
+#articulos {
+    padding: 40px 20px;
+}
+
+.articulos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Cada artículo como una tarjeta */
+.articulo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    text-decoration: none;
+    background-color: #FFFFE3;
+    border: 3px solid #d48806;
+    border-radius: 8px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: inherit; /* hereda el color del texto normalmente */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.articulo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.articulo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.articulo h1 {
+    font-size: 1.1rem;
+    padding: 10px 15px 0;
+    margin: 5px;
+}
+
+.articulo h5 {
+    padding: 5px 15px 15px;
+    margin: 0;
+    color: #444;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 /*  =================================== Externos Politica =======================================*/
@@ -570,6 +625,7 @@ form button:hover {
 
 /* --- Media Queries: Móviles y tablets --- */
 @media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
+    /*======================= Navegador ========================*/
     .navbar {
         flex-direction: column;
         align-items: stretch;
@@ -628,6 +684,7 @@ form button:hover {
         max-width: 100%;
     }
 
+    /*================================ Documentos ===========================*/
     /* Otros ajustes del layout general */
     main, aside {
         width: 100%;
@@ -670,6 +727,7 @@ form button:hover {
         display: block;
     }
 
+    /*====================================== Formulario ================================*/
     form {
         padding: 1rem;
         width: 90%;
@@ -679,6 +737,7 @@ form button:hover {
         width: 100%;
     }
 
+    /*=================================== Dolar ==============================*/
     .dolar-cards {
         flex-direction: column;
         align-items: center;
@@ -688,5 +747,30 @@ form button:hover {
     .dolar-card {
         width: 90%;
         margin-bottom: 15px;
+    }
+
+    /*============================ Articulos Index ==========================*/
+    .articulos-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .articulo {
+        width: 100%; /* ocupa todo el ancho disponible */
+        max-width: 95%; /* deja un pequeño margen */
+        margin: 10px 0;
+    }
+
+    .articulo h1 {
+        font-size: 1rem;
+    }
+
+    .articulo h5 {
+        font-size: 0.9rem;
+    }
+
+    .articulo img {
+        height: auto; /* para que se adapte bien a la anchura */
     }
 }
