@@ -77,18 +77,24 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 50vw;
+    width: 100vw; /* Cambiado a 100vw para consistencia */
     height: 100vh;
     background-color: #222;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 1000;
-    padding: 40px 20px;
+    padding: 20px; /* Reducido para móviles */
     box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
 }
 
 .overlay.open {
     transform: translateX(0);
+}
+
+.overlay-content {
+    position: relative; /* Para posicionar el botón de cierre */
+    max-width: 100%; /* Evita desbordes */
 }
 
 .overlay-content h1 {
@@ -118,8 +124,14 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.overlay span {
+.overlay span#close-overlay {
+    position: absolute; /* Posicionamiento absoluto */
+    top: 10px;
+    right: 10px; /* Margen para no tocar el borde */
+    cursor: pointer;
+    font-size: 24px;
     color: #ffffff;
+    z-index: 1100; /* Asegura que esté sobre otros elementos */
 }
 
 .redes {
@@ -133,8 +145,8 @@ body {
     margin: 0 5px;
 }
 
-/* Letra del logo*/
-header h1 a , .overlay h1, .overlay h2{ 
+/* Letra del logo */
+header h1 a, .overlay h1, .overlay h2 { 
     color: #d48806;
     font-family: "Monoton", sans-serif;
     font-weight: 400;
@@ -145,8 +157,8 @@ header h1 a , .overlay h1, .overlay h2{
     color: #d48806;
 }
 
-/*  ----------------------------------------- Index ----------------------------------------- */
-/* Estilo para la sección de articulos */
+/* ----------------------------------------- Index ----------------------------------------- */
+/* Estilo para la sección de artículos */
 #articulos {
     padding: 40px 20px;
 }
@@ -157,9 +169,10 @@ header h1 a , .overlay h1, .overlay h2{
     color: #d48806;
 }
 
+/* Diseño de Grid para artículos */
 .articulos-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
 }
@@ -206,8 +219,7 @@ header h1 a , .overlay h1, .overlay h2{
     line-height: 1.4;
 }
 
-/* ----------------------------------------- Externos Politica ----------------------------------------- */
-/* Solo afecta a main con clase Index-Politica */
+/* ----------------------------------------- Externos Política ----------------------------------------- */
 main.Index-Politica h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -219,8 +231,10 @@ main.Index-Politica h1 {
     font-family: 'Helvetica', sans-serif;
 }
 
-/* Aside solo dentro del main.Index-Politica */
 main.Index-Politica aside {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     padding: 1rem;
     background-color: #f9f9f9;
 }
@@ -235,7 +249,7 @@ main.Index-Politica aside h1 {
 main.Index-Politica aside p {
     display: flex;
     align-items: flex-start;
-    margin: 1rem 0;
+    margin: 0;
 }
 
 main.Index-Politica aside a {
@@ -258,9 +272,7 @@ main.Index-Politica .aside-img {
     flex-shrink: 0;
 }
 
-/*  ----------------------------------------- Externos Economia ----------------------------------------- */
-/* Estilo para sección de dólar */
-/* Contenedor principal */
+/* ----------------------------------------- Externos Economía ----------------------------------------- */
 .dolar-info {
     background-color: #222;
     padding: 5px 5px;
@@ -278,7 +290,6 @@ main.Index-Politica .aside-img {
     font-weight: bold;
 }
 
-/* Contenedor de tarjetas horizontal y sin desbordes */
 .dolar-cards {
     display: flex;
     flex-wrap: wrap;
@@ -286,7 +297,6 @@ main.Index-Politica .aside-img {
     gap: 10px;
 }
 
-/* Tarjetas móviles */
 .dolar-card {
     background-color: white;
     border: 5px solid #f5a623;
@@ -316,7 +326,6 @@ main.Index-Politica .aside-img {
     font-weight: bold;
 }
 
-/* Solo afecta a main con clase Index-Economía */
 main.Index-Economia h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -327,8 +336,10 @@ main.Index-Economia h1 {
     font-family: 'Helvetica', sans-serif;
 }
 
-/* Aside solo dentro del main.Index-Economia */
 main.Index-Economia aside {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     padding: 1rem;
     background-color: #f9f9f9;
 }
@@ -343,7 +354,7 @@ main.Index-Economia aside h1 {
 main.Index-Economia aside p {
     display: flex;
     align-items: flex-start;
-    margin: 1rem 0;
+    margin: 0;
 }
 
 main.Index-Economia aside a {
@@ -365,8 +376,50 @@ main.Index-Economia .aside-img {
     border-radius: 5px;
     flex-shrink: 0;
 }
+
+/* ----------------------------------------- Externos Deportes ----------------------------------------- */
+main.Index-Deportes aside { /* Nuevo estilo para deportes */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+main.Index-Deportes aside h1 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f7921e;
+}
+
+main.Index-Deportes aside p {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+}
+
+main.Index-Deportes aside a {
+    display: flex;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #000;
+}
+
+main.Index-Deportes aside a:hover {
+    text-decoration: underline;
+    color: #f7921e;
+}
+
+main.Index-Deportes .aside-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
 /* ------------------------------------- Base de los documentos (son las noticias) ------------------------------------ */
-/* Encabezado */
 header {
     background-color: #FFFFE3;
     border-bottom: 2px solid #f5a623;
@@ -385,7 +438,6 @@ header h1 {
     margin-top: 10px;
 }
 
-/* Contenedor principal */
 .container {
     display: flex;
     justify-content: center;
@@ -393,12 +445,11 @@ header h1 {
     gap: 30px;
     max-width: 1200px;
     margin: 20px auto;
-    padding: 10 20px;
+    padding: 10px 20px;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Main */
 main {
     flex: 3;
 }
@@ -445,36 +496,22 @@ em {
 }
 
 .video-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* Esto es 16:9 */
-  height: 0;
-  overflow: hidden;
-  margin: 1em auto;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Esto es 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 1em auto;
 }
 
 .video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Aside (contenido lateral a la derecha) */
-aside {
-    flex: 1;
-    background-color: #FFFFE3;
-    border-left: 4px solid #f5a623;
-    padding: 20px 20px;
-    font-size: 0.85rem;
-    position: sticky;
-    top: 20px;
-    height: fit-content;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-/* Íconos personalizados para cada párrafo del aside */
 aside {
     flex: 1;
     background-color: #FFFFE3;
@@ -525,7 +562,7 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
-    width: 100vw;  /* Fuerza a ocupar todo el ancho de la ventana */
+    width: 100vw;
 }
 
 footer ol {
@@ -534,7 +571,7 @@ footer ol {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Para que los ítems no se desborden */
+    flex-wrap: wrap;
 }
 
 footer ol li {
@@ -542,16 +579,16 @@ footer ol li {
 }
 
 footer a {
-    text-decoration: none;   /* Quita el subrayado */
-    color: white;            /* Color del texto */
+    text-decoration: none;
+    color: white;
 }
 
 footer a:hover {
-    text-decoration: underline;  /* Subrayado al pasar el mouse */
-    color: #f5a623;              /* Cambia el color al pasar el mouse */
+    text-decoration: underline;
+    color: #f5a623;
 }
+
 /* ----------------------------------------- Documento Contacto ----------------------------------------- */
-/*Estilo del Formulario*/
 .contacto-titulo {
     font-family: "Monoton", sans-serif;
     font-size: 2rem;
@@ -615,8 +652,7 @@ form button:hover {
     background-color: #d48806;
 }
 
-/* Centrar Mapa */
-.mapa{
+.mapa {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
@@ -628,8 +664,8 @@ form button:hover {
     border-radius: 10px;
 }
 
-/* --- Media Queries: Móviles y tablets (para vista vertical y horizontal)--- */
-@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px){
+/* --- Media Queries: Móviles y tablets (para vista vertical y horizontal) --- */
+@media screen and (max-width: 768px), screen and (orientation: landscape) and (max-height: 500px) {
     /* ------------------- Navegador ------------------- */
     .navbar {
         flex-direction: column;
@@ -642,14 +678,15 @@ form button:hover {
         position: relative;
     }
 
-    .nav-wrapper h1{
+    .nav-wrapper h1 {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         grid-column: 1/4;
-        font-size: 24px; /*Achico al h1*/
-        margin-top: -55px; /*muevo el h1 para arriba*/
+        font-size: 24px;
+        margin-top: -55px;
     }
+
     .hamburger {
         font-size: 24px;
         align-self: flex-start;
@@ -662,7 +699,7 @@ form button:hover {
     }
 
     .nav-left, .nav-right {
-        position: static !important; 
+        position: static !important;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -681,16 +718,36 @@ form button:hover {
     /* Menú overlay ocupa más espacio en vertical */
     .overlay {
         width: 100vw;
+        padding: 15px; /* Reducido aún más para móviles */
+        box-sizing: border-box;
     }
 
+    .overlay-content {
+        max-width: 100%;
+        padding: 0 10px; /* Ajustado para evitar desbordes */
+    }
+
+    .overlay-content h1 {
+        font-size: 1.5rem; /* Reducir tamaño para móviles */
+    }
+
+    .overlay-content ul li a {
+        font-size: 16px; /* Ajustar tamaño de fuente */
+    }
+
+    .overlay span#close-overlay {
+        top: 5px; /* Más cerca del borde superior */
+        right: 5px; /* Más cerca del borde derecho */
+        font-size: 20px; /* Tamaño más pequeño para móviles */
+    }
+
+    /* ------------------- Documentos ------------------- */
     .container {
-        flex-direction: column;  /* Apilo el main y aside uno debajo del otro */
+        flex-direction: column;
         padding: 10px;
         max-width: 100%;
     }
 
-    /* ------------------- Documentos ------------------- */
-    /* Otros ajustes del layout general */
     main, aside {
         width: 100%;
     }
@@ -754,16 +811,17 @@ form button:hover {
         margin-bottom: 15px;
     }
 
-    /* ------------------- Articulos Index ------------------- */
+    /* ------------------- Artículos Index ------------------- */
     .articulos-container {
-        flex-direction: column;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
         padding: 0 10px;
     }
 
     .articulo {
-        width: 100%; 
-        max-width: 95%; 
+        width: 100%;
+        max-width: 95%;
         margin: 10px 0;
     }
 
@@ -776,6 +834,13 @@ form button:hover {
     }
 
     .articulo img {
-        height: auto; /* para que se adapte bien a la anchura */
+        height: auto;
+    }
+}
+
+/* Media query adicional para pantallas medianas */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .articulos-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
